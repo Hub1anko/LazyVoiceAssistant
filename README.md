@@ -1,5 +1,5 @@
 # LazyVoiceAssistant
-## Desclimer
+## Disclaimer
 LazyVoiceAssistant is in the early stages of development, and I work on it sporadically during my free time. Speech-to-text is not perfect and sometimes it's drunk. Accuracy can be improved by sacrificing time and space, to do that go to micrphone_recognition_gpu.py and change self.whisperModel to bigger models.
 
 ## Usage
