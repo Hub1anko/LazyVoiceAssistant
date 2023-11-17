@@ -5,6 +5,7 @@ import pandas as pd
 # ------------- #
 
 class SaveToExcel:
+    # TO-DO: change input from different columns to df
     def __init__(self, Task, TaskType, Time, Date, StartTime, excel_filename):
         # Create a DataFrame with the new data
         self.new_data = {

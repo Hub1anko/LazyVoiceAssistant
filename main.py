@@ -16,6 +16,7 @@ from datetime import datetime
 
 # Find matches in text
 Extarctor = TDE()
+Recognizer = recognize()
 #Extarctor.find_start_end(input_text)
 
 # Variables to save in excel
@@ -32,11 +33,10 @@ Extarctor = TDE()
 excel_filename = 'test.xlsx'
 #Saver = STE(Task, TaskType, Time, Date, StartTime, excel_filename)
 #Saver.SaveToExcel()
-cooldown = 3
-activation = 0
+
 # TO-DO: Add Stop command with optional 'Notes' or stop after new Start.
 while 1:
-    input_text, activation = recognize(cooldown, activation)
+    input_text = Recognizer.recognize()
     if input_text != None:
         Extarctor.init()
         Extarctor.find_start_end(input_text)
