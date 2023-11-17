@@ -32,7 +32,7 @@ Recognizer = recognize()
 # Save to Excel #
 # ------------- #
 
-excel_filename = 'test.xlsx'
+excel_filename = 'data.xlsx'
 #Saver = STE(Task, TaskType, Time, Date, StartTime, excel_filename)
 #Saver.SaveToExcel()
 
