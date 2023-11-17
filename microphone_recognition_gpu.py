@@ -6,13 +6,9 @@ import speech_recognition as sr
 import pyaudio
 import numpy as np
 import time
-import os
-import yaml
-import wave
+import torch
 from playsound import playsound
 from openwakeword import Model
-from requests import post
-from piper import PiperVoice
 
 class recognize:
     def __init__(self):
@@ -25,12 +21,15 @@ class recognize:
         self.CHUNK = 1280
         self.pyaudio = pyaudio.PyAudio()
         self.mic_stream = self.pyaudio.open(format=self.FORMAT, channels=self.CHANNELS, rate=self.RATE, input=True, frames_per_buffer=self.CHUNK)
-        self.processor_device = 'cuda'
-
+        if torch.cuda.is_available():
+            self.processor_device = 'cuda'
+        else:
+            self.processor_device = 'cpu'
 
         #set delay for activation
         self.cooldown = 3 #seconds
         self.activation_time = 0
+        self.whisperModel = "base" # possible: tiny, base, small, medium, large
 
     def recognize(self):
         # Get audio
@@ -48,7 +47,7 @@ class recognize:
 
                 # recognize speech using whisper
                 try:
-                    self.response = self.recognizer.recognize_whisper(self.audio, language="english", load_options=dict(device=self.processor_device))
+                    self.response = self.recognizer.recognize_whisper(self.audio, model=self.whisperModel, language="english", load_options=dict(device=self.processor_device))
                     print("Whisper thinks you said: " + self.response)
                     self.activation_time = time.time()
                     return self.response
