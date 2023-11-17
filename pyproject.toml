@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "lazyvoiceassistant"
+version = "0.1.0"
+description = "Voice assisted worklog"
+authors = ["Hubert Waleńczak <hubertowo100@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+SpeechRecognition = "3.10.0"
+PyAudio = "^0.2.13"
+numpy = "<1.23.0"
+torch = "2.0.1"
+playsound = "*"
+openwakeword = "^0.5.0"
+pandas = "<2.0.2"
+spacy = "^3.7.2"
+scipy = "*"
+openai-whisper = "20231106"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

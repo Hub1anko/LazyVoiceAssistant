@@ -18,6 +18,18 @@ Save new worklog entry
 - Save [...] task type [...];
 - Save [...];
 
+### Issues
+Use of poetry is ***NOT*** recomended
+
+if you have problems with playsound, run:
+```bash
+pip install playsound
+```
+
+if you get "OSError: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.", run:
+```bash
+python -m spacy download en_core_web_sm
+```
 ### Planned features:
 - Command for stoping the previous task and adding actual time with ability to add notes,
 - Gui,
