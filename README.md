@@ -19,7 +19,7 @@ Save new worklog entry
 - Save [...];
 
 ### Issues
-Use of poetry is ***NOT*** recomended
+Use of poetry is ***NOT*** recommended
 
 if you have problems with playsound, run:
 ```bash
